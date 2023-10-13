@@ -21,9 +21,6 @@ components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 |Anatomy - expresses - Gene|  	AeG	  |  526407	|   241 |    18094	 | 453477  |
 |Anatomy - upregulates - Gene|  	 AuG | 	  97848  | 	36  |  15929	|  97848|
 
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.
 
 # 💡 NOTE 
 - Files Can be hosted on a local Python server using:
