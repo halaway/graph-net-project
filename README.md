@@ -15,11 +15,12 @@ components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 - The _"edges_test.tsv_" file contains over 1M edge relationships between a target and source node
   with individually labeled relationship types referred to by the "_metaedges.tsv_" file.
 
-|  Metaedge | abbreviation |	edges	| source_nodes |	target_nodes	|unbiased |
-| --------  |:------------ :| ---------|:-------- :|---------------:| ---------:|
-Anatomy - downregulates - Gene	AdG	102240	36	15097	102240
-Anatomy - expresses - Gene	AeG	526407	241	18094	453477
-Anatomy - upregulates - Gene	AuG	97848	36	15929	97848
+| Metaedge               | abbreviatio     | edges   | source_nodes               | target_nodes     | unbiased   |
+| ---------------------- |:---------------:| ---------:| ---------------------- |:---------------:| ---------:|
+
+Anatomy  downregulates   Gene	|AdG|	   102240	   36  	15097	  102240
+Anatomy - expresses - Gene	AeG	  526407	241	  18094	  453477
+Anatomy - upregulates - Gene	 AuG	  97848  	36	 15929	  97848
 
 There must be at least 3 dashes separating each header cell.
 The outer pipes (|) are optional, and you don't need to make the 
