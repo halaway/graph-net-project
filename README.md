@@ -1,6 +1,8 @@
 Daniel Perez A.
 
-This files contains all the necessary queries needed for runninng this program.
+# graph-net-project
+
+This file contains all the necessary queries needed for running this program.
 
 - Each Query Solves a specific portion of the project using Neo4J as a graph based NoSQL Store.
 
