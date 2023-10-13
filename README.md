@@ -37,7 +37,7 @@ components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 - When finding possible treatments for Diseases that have no direct connection to any Compound, the approach for such a query is to begin by navigating the genes that are _DownRegulated\UpRegulated_ by a Compound and Anatomy, in the opposite direction, in which the same Disease localizes. This would create the following graph.
 
 
-## QUERIES
+## 📝 QUERIES
  The following Queries solve a specific portion of the project using Neo4J as a graph-based NoSQL Store.
 
 
