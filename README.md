@@ -17,7 +17,7 @@ components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 
 | Metaedge                  | abbreviation     | edges   | source_nodes               | target_nodes     | unbiased   |
 | ------------------------- |:---------------:| ---------:| ---------------------- |:---------------:| ---------:|
-|Anatomy  downregulates Gene|   AdG        |	   102240	   36  	15097	  102240|
+|Anatomy  downregulates Gene|   AdG        |	   102240	  |  36                    |  	15097	       |      102240|
 |Anatomy - expresses - Gene|  	AeG	  |  526407	|   241 |    18094	 | 453477  |
 |Anatomy - upregulates - Gene|  	 AuG | 	  97848  | 	36  |  15929	|  97848|
 
