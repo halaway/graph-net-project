@@ -34,6 +34,11 @@ raw Markdown line up prettily. You can also use inline Markdown.
 - To execute a query from the terminal:
   - run: python3 projectBD.py <"QUERY SELECTED">
 
+ 
+ # Example Node Structure 
+![possibleCures](https://github.com/halaway/graph-net-project/assets/31904474/5c04b449-6a48-4b7d-b2af-ed7ee827f602)
+- When finding possible treatments for Diseases that have no direct connection to any Compound, the approach for such a query is to begin by navigating the genes that are DownRegulated\UpRegulated by a Compound and Anatomy in which the same Disease localizes would create the following graph.
+
 
 ## QUERIES
  The following Queries solve a specific portion of the project using Neo4J as a graph-based NoSQL Store.
