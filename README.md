@@ -3,7 +3,7 @@
 🚀 This project examines graph-based data storage for managing and connecting nodes from 
 components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 
-## Files
+## 📖 Files
 - The _"nodes_test.tsv"_ contains over 20,000 nodes pertaining to these four element types with
   each unique attribute such as _ID_, _Name_, and _Kind_.
 
@@ -25,7 +25,7 @@ There must be at least 3 dashes separating each header cell.
 The outer pipes (|) are optional, and you don't need to make the 
 raw Markdown line up prettily. You can also use inline Markdown.
 
-# NOTE
+# 💡 NOTE 
 - Files Can be hosted on a local Python server using:
     python3 -m http.server
 - The Neo4J Base Server Requires authentication and must remain active.
