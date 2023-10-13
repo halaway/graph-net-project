@@ -38,7 +38,7 @@ components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 
 
 ## 📝 QUERIES
- The following Queries solve a specific portion of the project using Neo4J as a graph-based NoSQL Store.
+ The following Cypher Queries solve a specific portion of the project using Neo4J as a graph-based NoSQL Store.
 
 
 # Return Disease Name
