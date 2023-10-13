@@ -37,7 +37,7 @@ raw Markdown line up prettily. You can also use inline Markdown.
  
  # Example Node Structure 
 ![possibleCures](https://github.com/halaway/graph-net-project/assets/31904474/5c04b449-6a48-4b7d-b2af-ed7ee827f602)
-- When finding possible treatments for Diseases that have no direct connection to any Compound, the approach for such a query is to begin by navigating the genes that are DownRegulated\UpRegulated by a Compound and Anatomy in which the same Disease localizes would create the following graph.
+- When finding possible treatments for Diseases that have no direct connection to any Compound, the approach for such a query is to begin by navigating the genes that are _DownRegulated\UpRegulated_ by a Compound and Anatomy, in the opposite direction, in which the same Disease localizes. This would create the following graph.
 
 
 ## QUERIES
@@ -49,7 +49,7 @@ raw Markdown line up prettily. You can also use inline Markdown.
     n.id ='Disease::DOID:8577') 
     RETURN n
 
-# Return Compounds that Palliate or Treats
+# Return Compounds that Palliate or Treat Disease
     MATCH m=(n:Data)-[:CpD|CtD]->(b:Data where 
     b.id='Disease::DOID:7148') RETURN n
     
