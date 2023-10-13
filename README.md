@@ -1,6 +1,8 @@
-Daniel Perez A.
-
 # graph-net-project
+
+This project examines graph-based data storage for managing and connecting nodes from 
+components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
+
 
 This file contains all the necessary queries needed for running this program.
 
