@@ -1,15 +1,33 @@
 # graph-net-project
 
-This project examines graph-based data storage for managing and connecting nodes from 
+🚀 This project examines graph-based data storage for managing and connecting nodes from 
 components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
 
+## Files
+- The _"nodes_test.tsv"_ contains over 20,000 nodes pertaining to these four element types with
+  each unique attribute such as _ID_, _Name_, and _Kind_.
+
+| ID                     | Name            | Kind      |
+| ---------------------- |:---------------:| ---------:|
+|Anatomy::UBERON:0000042 | serous membrane | Anatomy   |
+| Compound::DB00396      | Progesterone    | Compound  |
+
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the 
+raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 This file contains all the necessary queries needed for running this program.
 
 - Each Query Solves a specific portion of the project using Neo4J as a graph based NoSQL Store.
 
 To execute a query from the terminal:
-    - run: python3 projectBD.py <"QUERY SELETED">
+    - run: python3 projectBD.py <"QUERY SELECTED">
 
 # NOTE
 - Files Can be hosted on a local Python server using:
