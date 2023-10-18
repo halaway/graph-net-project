@@ -1,8 +1,7 @@
 # graph-net-project
 
 🚀 This project examines graph-based data storage for managing and connecting nodes from 
-components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_.
-
+components such as _Compounds_, _Diseases_, _Genes_, and _Anatomies_ with an interactive Graphical User Interface for Queries.
 ## 📖 Files
 - The _"nodes_test.tsv"_ contains over 20,000 nodes pertaining to these four element types with
   each unique attribute such as _ID_, _Name_, and _Kind_.
