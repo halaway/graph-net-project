@@ -22,6 +22,7 @@ from pyvis.network import Network
 from pyvis import network as net
 import numpy as np
 
+import tkinter as tk
 
 # Authentication
 URI = "bolt://localhost:7689"
