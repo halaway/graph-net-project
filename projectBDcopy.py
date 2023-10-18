@@ -1,6 +1,7 @@
 # Daniel Perez A.
 # CSCI Big Data: Project One
 
+from curses import window
 import re
 from typing import Dict
 import pandas as pd
@@ -23,6 +24,9 @@ from pyvis import network as net
 import numpy as np
 
 import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+import math
 
 # Authentication
 URI = "bolt://localhost:7689"
@@ -73,6 +77,41 @@ class Neo4j:
                     print("No Matches Found")
         return 1  #
 
+    def r_query_gui(self, query, **params):
+           
+            with self.driver.session() as session:
+                record = {} 
+                s = ""
+
+                # Tokenizing Query for Keyword Word
+                word_query = word_tokenize(query.lower())
+                
+                # Running Query
+                try:
+                    result = session.run(query, **params)
+                except:
+                    print ("Query Not Possible")
+                    #return 1
+                
+                else:
+                    if 'load' in word_query:
+                        print('Neo4j Loaded Data Succesfully')
+                        #return 1
+
+                    for x in result:
+                        record = dict(x)
+                        #s = ''
+                        s+= record['n']['name'] +  "Name: " + record['n']['dataName'].title()
+                        #return s;
+                        #print(record['n']['name'], "Name: ", record['n']['dataName'].title())
+                        
+                    
+                    if not record :
+                        print("No Matches Found")
+            return s  #
+
+
+
 
 # Main Program for Querying and Visualizing Data
 def main(argv):
@@ -89,40 +128,46 @@ def main(argv):
         print("Query is not Defined. Here's a Visual")
         
         # Visualizing Query
-        # %%
-        import networkx as nx
-        import matplotlib.pyplot as plt
+        window = tk.Tk()
+       #Set the geometry of tkinter frame
+        window.geometry("512x270")
 
-        data_graph = nx.Graph()
+        #Create an entry widget to accept user input
+        entry= Entry(window, width=20)
+        entry.pack(ipadx= 20,pady=20)
 
-        with database_db.driver.session() as session:
-            result = session.run("""MATCH n=(a:Data)-[:CpD]->\
-                (b:Data where b.id='Disease::DOID:7148') RETURN a,b""")
-            for record in result: 
-                
-                # Extracting the nodes from both nodes
-                node_a = record["a"]
-                node_b = record["b"]
-                
-                # Adding nodes to the network graph
-                data_graph.add_node(node_a["id"])  
-                data_graph.add_node(node_b["id"])
-
-                # Adding edge to graph
-                data_graph.add_edge(node_a["id"], node_b["id"])
+        def find_compound():
+            no = str(compound.get())
+            query_text = f"""MATCH (n WHERE n.name='Compound' AND n.id ='{no}') RETURN n"""
+            query = database_db.r_query_gui(query_text)
+            Label(window, text=query).pack()
 
 
-        pos = nx.spring_layout(data_graph)  
-        edge_labels = {edge: 'CpD' for edge in data_graph.edges()}
-        nx.draw_networkx_edge_labels(data_graph, pos, edge_labels=edge_labels)
+            #Disease::DOID:8577'
+        def find_disease():
+            no = str(entry.get())
+            query_text = f"""MATCH (n WHERE n.name='Disease' AND n.id ='{no}') RETURN n"""
+            query = database_db.r_query_gui(query_text)
+            Label(window, text=query).pack()
 
-        nx.draw_networkx(data_graph, pos,with_labels=True, node_size=100)
-        
-        plt.show()
+        #Create a button to calculate the number
+        ttk.Button(window, text= "Find Disease", command= find_disease).pack()
+
+        #Find Compound
+        compound = Entry(window, width=20)
+        compound.pack(ipadx= 20,pady=20)
+
+        #Create a button to calculate the number
+        ttk.Button(window, text= "Find Compound", command= find_compound).pack()
+
+        #Set the Title of Tkinter window
+        window.title("Interative Query")
+        window.mainloop()
+
 
     else:
         # Running Query From Termnial
-        database_db.r_query(command_line_query)
+        database_db.r_query_gui(command_line_query)
 
     # Closing Data Base
     database_db.close()
